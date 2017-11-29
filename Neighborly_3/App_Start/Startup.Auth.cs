@@ -58,11 +58,11 @@ namespace Neighborly_3
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "943123347223-b5t1n937qr4uhs5pvrv9b4ljc6et75ls.apps.googleusercontent.com",
+                ClientSecret = "a8mHTWKc5d7LiL5VdRz4zWvd"
+            });
         }
     }
 }
