@@ -11,6 +11,14 @@ namespace Neighborly_3.Models
     {
         public string StreetAddress { get; set; }
 
+        public string AboutMe { get; set; }
+
+        public int NumTimesHelped { get; set; }
+
+        public string Testimonial { get; set; }
+
+        public string ProfilePhoto { get; set; }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

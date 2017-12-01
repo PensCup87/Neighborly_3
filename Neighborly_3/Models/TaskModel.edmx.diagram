@@ -13,10 +13,11 @@
         <EntityTypeShape EntityType="FinalProjectModel.AspNetRole" Width="1.5" PointX="3.375" PointY="6.5" />
         <EntityTypeShape EntityType="FinalProjectModel.AspNetUserClaim" Width="1.5" PointX="7.875" PointY="5" />
         <EntityTypeShape EntityType="FinalProjectModel.AspNetUserLogin" Width="1.5" PointX="7.875" PointY="7.75" />
-        <EntityTypeShape EntityType="FinalProjectModel.AspNetUser" Width="1.5" PointX="5.625" PointY="5.375" />
+        <EntityTypeShape EntityType="FinalProjectModel.AspNetUser" Width="1.5" PointX="5.625" PointY="5.75" />
         <AssociationConnector Association="FinalProjectModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="FinalProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="FinalProjectModel.AspNetUserRoles" />
+        <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
