@@ -18,9 +18,7 @@
         <AssociationConnector Association="FinalProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="FinalProjectModel.AspNetUserRoles" />
         <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-        <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-        <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
