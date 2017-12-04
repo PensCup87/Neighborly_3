@@ -215,9 +215,6 @@
     <Compile Include="Models\Message.cs">
       <DependentUpon>TaskModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>TaskModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Task2.cs">
       <DependentUpon>TaskModel.tt</DependentUpon>
     </Compile>

@@ -221,16 +221,6 @@
           <Property Name="TaskID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Task2" Relationship="Self.FK_Message_Task2" FromRole="Message" ToRole="Task2" />
         </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Task2">
           <Key>
             <PropertyRef Name="TaskID" />
@@ -260,7 +250,6 @@
         </Association>
         <EntityContainer Name="FinalProjectEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Messages" EntityType="Self.Message" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Task2" EntityType="Self.Task2" />
           <AssociationSet Name="FK_Message_Task2" Association="Self.FK_Message_Task2">
             <End Role="Task2" EntitySet="Task2" />

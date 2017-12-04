@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c49a0a208a6f4db9aeb7d7daa1647b0e" Name="Diagram1">
         <EntityTypeShape EntityType="FinalProjectModel.Message" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinalProjectModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalProjectModel.Task2" Width="1.5" PointX="5.375" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="FinalProjectModel.FK_Message_Task2" ManuallyRouted="false" />
         <EntityTypeShape EntityType="FinalProjectModel.C__MigrationHistory" Width="1.5" PointX="5.375" PointY="0.75" />
@@ -18,9 +17,7 @@
         <AssociationConnector Association="FinalProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="FinalProjectModel.AspNetUserRoles" />
         <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-        <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-        <AssociationConnector Association="FinalProjectModel.FK_Task2_AspNetUsers" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

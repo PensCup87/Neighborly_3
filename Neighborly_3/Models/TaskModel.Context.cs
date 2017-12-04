@@ -26,7 +26,6 @@ namespace Neighborly_3.Models
         }
     
         public virtual DbSet<Message> Messages { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Task2> Task2 { get; set; }
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
