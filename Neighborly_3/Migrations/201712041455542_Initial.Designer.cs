@@ -7,13 +7,13 @@ namespace Neighborly_3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddStreetAddress : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddStreetAddress));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712011643416_AddStreetAddress"; }
+            get { return "201712041455542_Initial"; }
         }
         
         string IMigrationMetadata.Source

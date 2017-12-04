@@ -20,6 +20,7 @@ namespace Neighborly_3.Models
             this.AspNetUserClaims = new HashSet<AspNetUserClaim>();
             this.AspNetUserLogins = new HashSet<AspNetUserLogin>();
             this.AspNetRoles = new HashSet<AspNetRole>();
+            this.Task2 = new HashSet<Task2>();
         }
     
         public string Id { get; set; }
@@ -35,6 +36,10 @@ namespace Neighborly_3.Models
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
         public string StreetAddress { get; set; }
+        public string AboutMe { get; set; }
+        public Nullable<int> NumTimesHelped { get; set; }
+        public string Testimonial { get; set; }
+        public string ProfilePhoto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
@@ -42,5 +47,7 @@ namespace Neighborly_3.Models
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Task2> Task2 { get; set; }
     }
 }

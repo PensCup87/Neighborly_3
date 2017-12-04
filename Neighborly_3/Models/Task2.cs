@@ -31,5 +31,6 @@ namespace Neighborly_3.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Messages { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

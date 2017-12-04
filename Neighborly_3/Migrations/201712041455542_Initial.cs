@@ -3,10 +3,12 @@ namespace Neighborly_3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
+            return;
+
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -35,6 +37,11 @@ namespace Neighborly_3.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        StreetAddress = c.String(),
+                        AboutMe = c.String(),
+                        NumTimesHelped = c.Int(nullable: false),
+                        Testimonial = c.String(),
+                        ProfilePhoto = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
