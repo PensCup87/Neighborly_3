@@ -44,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TimeStamp, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToString("MM\\/dd\\/yyyy h\\:mm tt")}})
+                @Html.EditorFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToString("MM\\/dd\\/yyyy h\\:mm tt") } })
                 @Html.ValidationMessageFor(model => model.TimeStamp, "", new { @class = "text-danger" })
             </div>
         </div>

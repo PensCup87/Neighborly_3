@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Neighborly_3.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Neighborly_3.Controllers
 {
@@ -46,12 +47,15 @@ namespace Neighborly_3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TaskID,TaskDescription,TaskTitle")] Task2 task2)
+        public ActionResult Create([Bind(Include = "TaskID,TaskDescription,TaskTitle,IsDone,TimeStamp,IsAssigned,HelpProviderID,TaskCreatorID")] Task2 task2)
         {
             if (ModelState.IsValid)
             {
                 db.Task2.Add(task2);
-
+                task2.IsAssigned = false;
+                task2.IsDone = false;
+                task2.TaskCreatorID = User.Identity.GetUserId();
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
