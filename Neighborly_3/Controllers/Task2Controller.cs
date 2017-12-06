@@ -16,8 +16,30 @@ namespace Neighborly_3.Controllers
         private FinalProjectEntities db = new FinalProjectEntities();
 
         // GET: Task2
-        public ActionResult Index()
+        public ActionResult Index(string search, string sort)
         {
+            var items = from s in db.Task2
+                           select s;
+            //var items = db.Task2.Include(i => i.TaskID);
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                items = items.Where(s => s.TaskTitle.Contains(search)
+                                       || s.TaskDescription.Contains(search));
+            }
+
+            if (sort == "Descending")
+            {
+                items = from item in items
+                        orderby item.TimeStamp descending
+                        select item;
+            }
+            else
+            {
+                items = from item in items
+                        orderby item.TimeStamp ascending
+                        select item;
+            }
             return View(db.Task2.ToList());
         }
 

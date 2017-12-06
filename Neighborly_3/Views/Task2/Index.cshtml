@@ -9,6 +9,17 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm("Index", "Task2", FormMethod.Get)) //"page","Controller", formMethod invokes get method from controller
+{
+    //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
+    @Html.RadioButton("sort", "Descending", true)<span>Sort Descending</span>
+    @Html.RadioButton("sort", "Ascending")<span>Sort Ascending</span>
+    @Html.TextBox("search");
+    <input type="submit" name="submit" value="Search" />
+}
+
+
 <table class="table">
     <tr>
         <th>
