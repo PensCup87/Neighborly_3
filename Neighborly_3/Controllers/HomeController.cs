@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace Neighborly_3.Controllers
 {
-
     [RequireHttps]
     public class HomeController : Controller
     {

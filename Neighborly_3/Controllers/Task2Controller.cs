@@ -46,11 +46,12 @@ namespace Neighborly_3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TaskID,TaskDescription,TaskTitle,IsDone,TimeStamp,IsAssigned,HelpProviderID,TaskCreatorID")] Task2 task2)
+        public ActionResult Create([Bind(Include = "TaskID,TaskDescription,TaskTitle")] Task2 task2)
         {
             if (ModelState.IsValid)
             {
                 db.Task2.Add(task2);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
