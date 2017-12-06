@@ -40,6 +40,7 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
+            ViewBag.userID = User.Identity.GetUserId(); 
             return View(db.Task2.ToList());
         }
 

@@ -70,9 +70,14 @@
             @Html.DisplayFor(modelItem => item.TaskCreatorID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TaskID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TaskID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TaskID })
+            @if (ViewBag.userID == item.TaskCreatorID)
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) <text> | </text>
+                @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }) <text> | </text>
+}
+
+            @Html.ActionLink("Details", "Details", new { id=item.TaskID }) 
+          
         </td>
     </tr>
 }
