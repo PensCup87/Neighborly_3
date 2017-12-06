@@ -74,9 +74,11 @@ namespace Neighborly_3.Controllers
             if (ModelState.IsValid)
             {
                 db.Task2.Add(task2);
+
                 task2.IsAssigned = false;
                 task2.IsDone = false;
                 task2.TaskCreatorID = User.Identity.GetUserId();
+                task2.TimeStamp = DateTime.Now;
                 
                 db.SaveChanges();
                 return RedirectToAction("Index");
