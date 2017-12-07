@@ -1,10 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Neighborly_3.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Street Address")]
+        public string StreetAddress { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -64,6 +74,20 @@ namespace Neighborly_3.Models
 
     public class RegisterViewModel
     {
+        public string AboutMe { get; set; }
+        public int NumTimesHelped { get; set; }
+        public string Testimonial { get; set; }
+        public string ProfilePhoto { get; set; }
+
+
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name ="Street Address")]
+        public string StreetAddress { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

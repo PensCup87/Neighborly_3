@@ -40,7 +40,7 @@ namespace Neighborly_3.Controllers
                         select item;
             }
             ViewBag.userID = User.Identity.GetUserId();
-            return View(items.ToList());
+             return View(items.ToList());
         }
 
         // GET: Task2/Details/5
