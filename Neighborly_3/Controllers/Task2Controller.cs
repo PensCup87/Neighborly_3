@@ -18,14 +18,13 @@ namespace Neighborly_3.Controllers
         // GET: Task2
         public ActionResult Index(string search, string sort)
         {
-            var items = from s in db.Task2
-                           select s;
-            //var items = db.Task2.Include(i => i.TaskID);
+            var items = from t in db.Task2
+                           select t;
 
             if (!String.IsNullOrEmpty(search))
             {
-                items = items.Where(s => s.TaskTitle.Contains(search)
-                                       || s.TaskDescription.Contains(search));
+                items = items.Where(t => t.TaskTitle.Contains(search)
+                                       || t.TaskDescription.Contains(search));
             }
 
             if (sort == "Descending")
@@ -40,8 +39,9 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
-            ViewBag.userID = User.Identity.GetUserId(); 
-            return View(db.Task2.ToList());
+            //Identifies user based on log in
+            ViewBag.userID = User.Identity.GetUserId();
+             return View(items.ToList());
         }
 
         // GET: Task2/Details/5
@@ -87,57 +87,9 @@ namespace Neighborly_3.Controllers
 
             return View(task2);
         }
-        public ActionResult ToggleDone(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Task2 item = db.Task2.Find(id);
-            if (item == null)
-            {
-                return HttpNotFound();
-            }
-            if (item.IsDone.GetValueOrDefault(false))
-            {
-                item.IsDone = false;
-            }
-            else
-            {
-                item.IsDone = true;
-            }
 
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-
-        public ActionResult AssignedToggleDone(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Task2 item = db.Task2.Find(id);
-            if (item == null)
-            {
-                return HttpNotFound();
-            }
-            if (item.IsAssigned.GetValueOrDefault(false))
-            {
-                item.IsAssigned = false;
-            }
-            else
-            {
-                item.IsAssigned = true;
-            }
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-
-// GET: Task2/Edit/5
-public ActionResult Edit(int? id)
+        // GET: Task2/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -148,8 +100,8 @@ public ActionResult Edit(int? id)
             {
                 return HttpNotFound();
             }
+            //Identifies user who offers help
             ViewBag.userID = User.Identity.GetUserId();
-
             return View(task2);
         }
 
@@ -159,16 +111,28 @@ public ActionResult Edit(int? id)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "TaskID,TaskDescription,TaskTitle,IsDone,TimeStamp,IsAssigned,HelpProviderID,TaskCreatorID")] Task2 task2)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(task2).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        task2.TaskCreatorID = User.Identity.GetUserId();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(task2);
+        //}
         {
             if (ModelState.IsValid)
             {
-                db.Entry(task2).State = EntityState.Modified;
+                db.Task2.Add(task2);
 
                 task2.HelpProviderID = User.Identity.GetUserId();
+                
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(task2);
         }
 
