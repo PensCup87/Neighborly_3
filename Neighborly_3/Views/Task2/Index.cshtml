@@ -46,40 +46,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsDone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsAssigned)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HelpProviderID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskCreatorID)
-        </td>
-        <td>
-            @if (ViewBag.userID == item.TaskCreatorID)
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) <text> | </text>
-                @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }) <text> | </text>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAssigned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HelpProviderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskCreatorID)
+            </td>
+            <td>
+                @if (ViewBag.userID == item.TaskCreatorID)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) <text> | </text>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }) <text> | </text>
+                }
 
-            @Html.ActionLink("Details", "Details", new { id=item.TaskID }) 
-          
-        </td>
-    </tr>
-}
+                @Html.ActionLink("Details", "Details", new { id = item.TaskID })
+
+            </td>
+        </tr>
+    }
 
 </table>
