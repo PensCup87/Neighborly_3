@@ -100,6 +100,7 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.userID = User.Identity.GetUserId();
             return View(task2);
         }
 
@@ -113,6 +114,8 @@ namespace Neighborly_3.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(task2).State = EntityState.Modified;
+                task2.HelpProviderID = User.Identity.GetUserId();
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
