@@ -18,14 +18,13 @@ namespace Neighborly_3.Controllers
         // GET: Task2
         public ActionResult Index(string search, string sort)
         {
-            var items = from s in db.Task2
-                           select s;
-            //var items = db.Task2.Include(i => i.TaskID);
+            var items = from t in db.Task2
+                           select t;
 
             if (!String.IsNullOrEmpty(search))
             {
-                items = items.Where(s => s.TaskTitle.Contains(search)
-                                       || s.TaskDescription.Contains(search));
+                items = items.Where(t => t.TaskTitle.Contains(search)
+                                       || t.TaskDescription.Contains(search));
             }
 
             if (sort == "Descending")
@@ -40,7 +39,8 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
-            return View(db.Task2.ToList());
+            ViewBag.userID = User.Identity.GetUserId();
+            return View(items.ToList());
         }
 
         // GET: Task2/Details/5
