@@ -39,6 +39,7 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
+            //Identifies user based on log in
             ViewBag.userID = User.Identity.GetUserId();
             return View(items.ToList());
         }
@@ -99,6 +100,8 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+            //Identifies user who offers help
+            ViewBag.userID = User.Identity.GetUserId();
             return View(task2);
         }
 
@@ -108,13 +111,28 @@ namespace Neighborly_3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "TaskID,TaskDescription,TaskTitle,IsDone,TimeStamp,IsAssigned,HelpProviderID,TaskCreatorID")] Task2 task2)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(task2).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        task2.TaskCreatorID = User.Identity.GetUserId();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(task2);
+        //}
         {
             if (ModelState.IsValid)
             {
-                db.Entry(task2).State = EntityState.Modified;
+                db.Task2.Add(task2);
+
+                task2.HelpProviderID = User.Identity.GetUserId();
+                
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(task2);
         }
 
