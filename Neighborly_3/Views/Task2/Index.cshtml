@@ -46,6 +46,39 @@
         <th></th>
     </tr>
 
+    @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAssigned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HelpProviderID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaskCreatorID)
+                </td>
+                <td>
+                    @if (ViewBag.userID == item.TaskCreatorID)
+                        {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) <text> | </text>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }) <text> | </text>
+                    }
+            </tr>*@
+    }
+
     @foreach (var item in Model)
     {
         <tr>
@@ -56,13 +89,34 @@
                 @Html.DisplayFor(modelItem => item.TaskTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsDone)
+                @*@Html.DisplayFor(modelItem => item.IsDone)*@
+                <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
+                    @if (item.IsDone.GetValueOrDefault(false))
+                    {
+                        <span class="glyphicon glyphicon-check"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-unchecked"></span>
+                    }
+                </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TimeStamp)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsAssigned)
+                @*@Html.DisplayFor(modelItem => item.IsAssigned)*@
+                <a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
+                    @if (item.IsAssigned.GetValueOrDefault(false))
+                    {
+                        <span class="glyphicon glyphicon-check"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-unchecked"></span>
+                    }
+                </a>
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HelpProviderID)

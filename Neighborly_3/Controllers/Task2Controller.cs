@@ -87,9 +87,57 @@ namespace Neighborly_3.Controllers
 
             return View(task2);
         }
+        public ActionResult ToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsDone.GetValueOrDefault(false))
+            {
+                item.IsDone = false;
+            }
+            else
+            {
+                item.IsDone = true;
+            }
 
-        // GET: Task2/Edit/5
-        public ActionResult Edit(int? id)
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult AssignedToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsAssigned.GetValueOrDefault(false))
+            {
+                item.IsAssigned = false;
+            }
+            else
+            {
+                item.IsAssigned = true;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+// GET: Task2/Edit/5
+public ActionResult Edit(int? id)
         {
             if (id == null)
             {
