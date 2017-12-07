@@ -148,6 +148,8 @@ public ActionResult Edit(int? id)
             {
                 return HttpNotFound();
             }
+            ViewBag.userID = User.Identity.GetUserId();
+
             return View(task2);
         }
 
@@ -161,6 +163,9 @@ public ActionResult Edit(int? id)
             if (ModelState.IsValid)
             {
                 db.Entry(task2).State = EntityState.Modified;
+
+                task2.HelpProviderID = User.Identity.GetUserId();
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
