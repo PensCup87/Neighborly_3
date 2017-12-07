@@ -55,13 +55,34 @@
             @Html.DisplayFor(modelItem => item.TaskTitle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsDone)
+            @*@Html.DisplayFor(modelItem => item.IsDone)*@
+            <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
+                @if (item.IsDone.GetValueOrDefault(false)) 
+                {
+                    <span class="glyphicon glyphicon-check"></span>
+                }
+                else
+                {
+                    <span class="glyphicon glyphicon-unchecked"></span>
+                }
+            </a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsAssigned)
+            @*@Html.DisplayFor(modelItem => item.IsAssigned)*@
+            <a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
+                @if (item.IsAssigned.GetValueOrDefault(false))
+                {
+                    <span class="glyphicon glyphicon-check"></span>
+                }
+                else
+                {
+                    <span class="glyphicon glyphicon-unchecked"></span>
+                }
+            </a>
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HelpProviderID)
