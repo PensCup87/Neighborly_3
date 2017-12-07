@@ -18,8 +18,9 @@ namespace Neighborly_3.Controllers
         // GET: Task2
         public ActionResult Index(string search, string sort)
         {
-            var items = from s in db.Task2
-                           select s;
+            var items = db.Task2.Include(t => t.TaskCreatorID);
+            //var items = from s in db.Task2
+            //               select s;
             //var items = db.Task2.Include(i => i.TaskID);
 
             if (!String.IsNullOrEmpty(search))
