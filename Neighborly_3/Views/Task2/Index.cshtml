@@ -37,7 +37,8 @@
                     <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
                     <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
                     <p>
-                        @Html.ActionLink("Offer Help", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
+                        @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
+                        @Html.ActionLink("Help Provider", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
                         @if (ViewBag.userID == item.TaskCreatorID)
                         {
                             @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>
