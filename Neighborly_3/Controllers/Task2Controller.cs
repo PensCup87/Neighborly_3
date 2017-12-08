@@ -15,11 +15,11 @@ namespace Neighborly_3.Controllers
     {
         private FinalProjectEntities db = new FinalProjectEntities();
 
-        // GET: Task2
+        // GET: Task2/Items Search and Sort
         public ActionResult Index(string search, string sort)
         {
             var items = from t in db.Task2
-                           select t;
+                        select t;
 
             if (!String.IsNullOrEmpty(search))
             {
@@ -39,9 +39,10 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
+
             //Identifies user based on log in
             ViewBag.userID = User.Identity.GetUserId();
-             return View(items.ToList());
+            return View(items.ToList());
         }
 
         // GET: Task2/Details/5
@@ -87,8 +88,6 @@ namespace Neighborly_3.Controllers
 
             return View(task2);
         }
-
-
         public ActionResult ToggleDone(int? id)
         {
             if (id == null)
@@ -138,9 +137,8 @@ namespace Neighborly_3.Controllers
         }
 
 
-
-        // GET: Task2/Edit/5
-        public ActionResult Edit(int? id)
+// GET: Task2/Edit/5
+public ActionResult Edit(int? id)
         {
             if (id == null)
             {
