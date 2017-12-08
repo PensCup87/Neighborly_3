@@ -71,6 +71,11 @@
 
     </dl>
 </div>
+
+<div>
+    @Html.ActionLink("Message the task creator", "Create", "Messages", new { id = Model.TaskID }, new { @class = "btn btn-default", role = "button" })
+</div>
+
 <p>
     @Html.ActionLink("Offer Help", "Edit", new { id = Model.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>) |
     @Html.ActionLink("Back to List", "Index")

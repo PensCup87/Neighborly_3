@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Neighborly_3.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Neighborly_3.Controllers
 {
@@ -18,6 +19,8 @@ namespace Neighborly_3.Controllers
         public ActionResult Index()
         {
             var messages = db.Messages.Include(m => m.Task2);
+            ViewBag.userID = User.Identity.GetUserId();
+
             return View(messages.ToList());
         }
 
@@ -39,7 +42,7 @@ namespace Neighborly_3.Controllers
         // GET: Messages/Create
         public ActionResult Create()
         {
-            ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskDescription");
+            ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskID");
             return View();
         }
 
@@ -53,11 +56,12 @@ namespace Neighborly_3.Controllers
             if (ModelState.IsValid)
             {
                 db.Messages.Add(message);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskDescription", message.TaskID);
+            ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskID", message.TaskID);
             return View(message);
         }
 
