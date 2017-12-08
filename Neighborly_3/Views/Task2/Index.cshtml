@@ -36,28 +36,6 @@
                     <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
                     <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
                     <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
-                    <p>@Html.DisplayNameFor(model => model.IsDone)
-                    <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
-                            @if (item.IsDone.GetValueOrDefault(false))
-                            {
-                                <span class="glyphicon glyphicon-check"></span>
-                            }
-                            else
-                            {
-                                <span class="glyphicon glyphicon-unchecked"></span>
-                            }
-                        </a>
-                     @Html.DisplayNameFor(model => model.IsAssigned)<a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
-                        @if (item.IsAssigned.GetValueOrDefault(false))
-                        {
-                            <span class="glyphicon glyphicon-check"></span>
-                        }
-                        else
-                        {
-                            <span class="glyphicon glyphicon-unchecked"></span>
-                        }
-                    </a>
-                    </p>
                     <p>
                         @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         @Html.ActionLink("Help Provider", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
@@ -73,4 +51,61 @@
     }
 </div>
 
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAssigned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HelpProviderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskCreatorID)
+            </th>
+            <th></th>
+        </tr>
 
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAssigned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HelpProviderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskCreatorID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.TaskID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.TaskID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.TaskID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
