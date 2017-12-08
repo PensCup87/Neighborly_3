@@ -42,7 +42,7 @@ namespace Neighborly_3.Controllers
         // GET: Messages/Create
         public ActionResult Create()
         {
-            ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskID");
+            //ViewBag.TaskID = new SelectList(db.Task2, "TaskID", "TaskID");
             return View();
         }
 
