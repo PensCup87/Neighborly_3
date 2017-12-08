@@ -15,7 +15,7 @@ namespace Neighborly_3.Controllers
     {
         private FinalProjectEntities db = new FinalProjectEntities();
 
-        // GET: Task2
+        // GET: Task2/Items Search and Sort
         public ActionResult Index(string search, string sort)
         {
             var items = from t in db.Task2

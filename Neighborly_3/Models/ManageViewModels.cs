@@ -7,6 +7,12 @@ namespace Neighborly_3.Models
 {
     public class IndexViewModel
     {
+        public string AboutMe { get; set; }
+        public int NumTimesHelped { get; set; }
+        public string Testimonial { get; set; }
+        public string ProfilePhoto { get; set; }
+        public string StreetAddress { get; set; }
+
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }
