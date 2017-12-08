@@ -160,28 +160,15 @@ public ActionResult Edit(int? id)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "TaskID,TaskDescription,TaskTitle,IsDone,TimeStamp,IsAssigned,HelpProviderID,TaskCreatorID")] Task2 task2)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(task2).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        task2.TaskCreatorID = User.Identity.GetUserId();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(task2);
-        //}
         {
             if (ModelState.IsValid)
             {
-                db.Task2.Add(task2);
-
+                db.Entry(task2).State = EntityState.Modified;
                 task2.HelpProviderID = User.Identity.GetUserId();
-                
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(task2);
         }
 
