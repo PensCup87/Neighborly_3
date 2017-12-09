@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@using (Html.BeginForm("Index", "Task2", FormMethod.Get)) //"page","Controller", formMethod invokes get method from controller
+@using (Html.BeginForm()) //"page","Controller", formMethod invokes get method from controller
 {
     //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
     @Html.RadioButton("sort", "Descending", true)<span>Sort Descending</span>
@@ -19,89 +19,58 @@
     <input type="submit" name="submit" value="Search" />
 }
 
+<div class="row">
+    <div class="container">
+        <h2>Pick a task and meet your neighbor</h2>
+        <p>
+            @Html.ActionLink("I need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default", role = "button" })
+        </p>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div>
+                    <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
+                    <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
+                    <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
+                    <p>@Html.DisplayNameFor(model => model.IsDone)
+                    <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
+                            @if (item.IsDone.GetValueOrDefault(false))
+                            {
+                                <span class="glyphicon glyphicon-check"></span>
+                            }
+                            else
+                            {
+                                <span class="glyphicon glyphicon-unchecked"></span>
+                            }
+                        </a>
+                     @Html.DisplayNameFor(model => model.IsAssigned)<a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
+                        @if (item.IsAssigned.GetValueOrDefault(false))
+                        {
+                            <span class="glyphicon glyphicon-check"></span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-unchecked"></span>
+                        }
+                    </a>
+                    </p>
+                    <p>
+                        @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
+                        @Html.ActionLink("Help Provider", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
+                        @if (ViewBag.userID == item.TaskCreatorID)
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TaskDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TaskTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsAssigned)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HelpProviderID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TaskCreatorID)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskTitle)
-        </td>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.IsDone)*@
-            <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
-                @if (item.IsDone.GetValueOrDefault(false)) 
-                {
-                    <span class="glyphicon glyphicon-check"></span>
-                }
-                else
-                {
-                    <span class="glyphicon glyphicon-unchecked"></span>
-                }
-            </a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
-        </td>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.IsAssigned)*@
-            <a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
-                @if (item.IsAssigned.GetValueOrDefault(false))
-                {
-                    <span class="glyphicon glyphicon-check"></span>
-                }
-                else
-                {
-                    <span class="glyphicon glyphicon-unchecked"></span>
-                }
-            </a>
-
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HelpProviderID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaskCreatorID)
-        </td>
-        <td>
-            @if (ViewBag.userID == item.TaskCreatorID)
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) <text> | </text>
-                @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }) <text> | </text>
-
-            }
-
-            @Html.ActionLink("Details", "Details", new { id=item.TaskID }) 
-          
-        </td>
-    </tr>
-}
-
-</table>
