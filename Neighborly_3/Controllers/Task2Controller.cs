@@ -171,7 +171,7 @@ public ActionResult Edit(int? id)
             {
                 db.Entry(task2).State = EntityState.Modified;
                 task2.HelpProviderID = User.Identity.GetUserId();
-
+                task2.IsAssigned = true;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
