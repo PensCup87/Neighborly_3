@@ -56,6 +56,12 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+
+            AspNetUser taskUser = (from u in db.AspNetUsers
+                           where u.Id == task2.TaskCreatorID
+                           select u).Single();
+
+            ViewBag.Address = taskUser.StreetAddress;
             return View(task2);
         }
 
