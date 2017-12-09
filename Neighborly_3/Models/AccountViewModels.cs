@@ -59,8 +59,8 @@ namespace Neighborly_3.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
+        [Display(Name = "User Name")]
+        //[EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -68,8 +68,8 @@ namespace Neighborly_3.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+        //[Display(Name = "Remember me?")]
+        //public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
