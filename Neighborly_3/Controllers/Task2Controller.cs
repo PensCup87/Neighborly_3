@@ -15,17 +15,16 @@ namespace Neighborly_3.Controllers
     {
         private FinalProjectEntities db = new FinalProjectEntities();
 
-        // GET: Task2
+        // GET: Task2/Items Search and Sort
         public ActionResult Index(string search, string sort)
         {
-            var items = from s in db.Task2
-                           select s;
-            //var items = db.Task2.Include(i => i.TaskID);
+            var items = from t in db.Task2
+                        select t;
 
             if (!String.IsNullOrEmpty(search))
             {
-                items = items.Where(s => s.TaskTitle.Contains(search)
-                                       || s.TaskDescription.Contains(search));
+                items = items.Where(t => t.TaskTitle.Contains(search)
+                                       || t.TaskDescription.Contains(search));
             }
 
             if (sort == "Descending")
@@ -40,7 +39,10 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
-            return View(db.Task2.ToList());
+
+            //Identifies user based on log in
+            ViewBag.userID = User.Identity.GetUserId();
+            return View(items.ToList());
         }
 
         // GET: Task2/Details/5
@@ -55,6 +57,12 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+
+            AspNetUser taskUser = (from u in db.AspNetUsers
+                           where u.Id == task2.TaskCreatorID
+                           select u).Single();
+
+            ViewBag.Address = taskUser.StreetAddress;
             return View(task2);
         }
 
@@ -86,9 +94,57 @@ namespace Neighborly_3.Controllers
 
             return View(task2);
         }
+        public ActionResult ToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsDone.GetValueOrDefault(false))
+            {
+                item.IsDone = false;
+            }
+            else
+            {
+                item.IsDone = true;
+            }
 
-        // GET: Task2/Edit/5
-        public ActionResult Edit(int? id)
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult AssignedToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsAssigned.GetValueOrDefault(false))
+            {
+                item.IsAssigned = false;
+            }
+            else
+            {
+                item.IsAssigned = true;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+// GET: Task2/Edit/5
+public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -99,6 +155,8 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+            //Identifies user who offers help
+            ViewBag.userID = User.Identity.GetUserId();
             return View(task2);
         }
 
@@ -112,6 +170,8 @@ namespace Neighborly_3.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(task2).State = EntityState.Modified;
+                task2.HelpProviderID = User.Identity.GetUserId();
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
