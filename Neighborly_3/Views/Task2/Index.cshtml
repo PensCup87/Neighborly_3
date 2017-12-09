@@ -32,7 +32,7 @@
     {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a>
+                <div>
                     <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
                     <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
                     <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
@@ -45,7 +45,7 @@
                             @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         }
                     </p>
-                </a>
+                </div>
             </div>
         </div>
     }

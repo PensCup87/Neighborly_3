@@ -19,7 +19,7 @@ namespace Neighborly_3.Controllers
         public ActionResult Index(string search, string sort)
         {
             var items = from t in db.Task2
-                           select t;
+                        select t;
 
             if (!String.IsNullOrEmpty(search))
             {
@@ -39,9 +39,10 @@ namespace Neighborly_3.Controllers
                         orderby item.TimeStamp ascending
                         select item;
             }
+
             //Identifies user based on log in
             ViewBag.userID = User.Identity.GetUserId();
-             return View(items.ToList());
+            return View(items.ToList());
         }
 
         // GET: Task2/Details/5
@@ -56,6 +57,12 @@ namespace Neighborly_3.Controllers
             {
                 return HttpNotFound();
             }
+
+            AspNetUser taskUser = (from u in db.AspNetUsers
+                           where u.Id == task2.TaskCreatorID
+                           select u).Single();
+
+            ViewBag.Address = taskUser.StreetAddress;
             return View(task2);
         }
 
@@ -87,9 +94,57 @@ namespace Neighborly_3.Controllers
 
             return View(task2);
         }
+        public ActionResult ToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsDone.GetValueOrDefault(false))
+            {
+                item.IsDone = false;
+            }
+            else
+            {
+                item.IsDone = true;
+            }
 
-        // GET: Task2/Edit/5
-        public ActionResult Edit(int? id)
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult AssignedToggleDone(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            if (item.IsAssigned.GetValueOrDefault(false))
+            {
+                item.IsAssigned = false;
+            }
+            else
+            {
+                item.IsAssigned = true;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+// GET: Task2/Edit/5
+public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -116,26 +171,12 @@ namespace Neighborly_3.Controllers
             {
                 db.Entry(task2).State = EntityState.Modified;
                 task2.HelpProviderID = User.Identity.GetUserId();
+
                 db.SaveChanges();
-                //task2.TaskCreatorID = User.Identity.GetUserId();
                 return RedirectToAction("Index");
             }
             return View(task2);
         }
-            //{
-            //if (ModelState.IsValid)
-            //{
-            //    db.Task2.Add(task2);
-
-            //    task2.HelpProviderID = User.Identity.GetUserId();
-
-
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-
-        //    return View(task2);
-        //}
 
         // GET: Task2/Delete/5
         public ActionResult Delete(int? id)
