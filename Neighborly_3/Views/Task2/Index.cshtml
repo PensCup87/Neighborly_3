@@ -27,6 +27,9 @@
         </p>
     </div>
 </div>
+
+
+
 <div class="row">
     @foreach (var item in Model)
     {
@@ -36,28 +39,39 @@
                     <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
                     <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
                     <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
-                    <p>@Html.DisplayNameFor(model => model.IsDone)
-                    <a href="@Url.Action("ToggleDone", new {id = item.TaskID})">
-                            @if (item.IsDone.GetValueOrDefault(false))
-                            {
-                                <span class="glyphicon glyphicon-check"></span>
-                            }
-                            else
-                            {
-                                <span class="glyphicon glyphicon-unchecked"></span>
-                            }
-                        </a>
-                     @Html.DisplayNameFor(model => model.IsAssigned)<a href="@Url.Action("AssignedToggleDone", new {id = item.TaskID})">
-                        @if (item.IsAssigned.GetValueOrDefault(false))
+                    <p>
+                        @if (ViewBag.userID == item.TaskCreatorID)
                         {
-                            <span class="glyphicon glyphicon-check"></span>
+                            @Html.DisplayNameFor(model => model.IsDone)
+                            <a href="@Url.Action("ToggleDone", new { id = item.TaskID })">
+
+                                @if (item.IsDone.GetValueOrDefault(false))
+                                {
+                                    <span class="glyphicon glyphicon-check"></span>
+                                }
+                                else
+                                {
+                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                }
+
+                            </a>
                         }
-                        else
+                        @if (ViewBag.userID == item.TaskCreatorID)
                         {
-                            <span class="glyphicon glyphicon-unchecked"></span>
+                            @Html.DisplayNameFor(model => model.IsAssigned)
+                            <a href="@Url.Action("AssignedToggleDone", new { id = item.TaskID })">
+                               
+                                    @if (item.IsAssigned.GetValueOrDefault(false))
+                                    {
+                                        <span class="glyphicon glyphicon-check"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="glyphicon glyphicon-unchecked"></span>
+                                    }
+                                
+                            </a>
                         }
-                    </a>
-                    </p>
                     <p>
                         @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         @Html.ActionLink("Help Provider", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
@@ -67,10 +81,14 @@
                             @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         }
                     </p>
+
+
                 </div>
             </div>
         </div>
+
+
     }
+
+
 </div>
-
-
