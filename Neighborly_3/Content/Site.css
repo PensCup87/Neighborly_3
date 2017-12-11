@@ -1,13 +1,206 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    background: #F6E8EA;
+    font: 14px/24px 'Muli', sans-serif;
 }
+
+/*Color Pallet
+    light pink: #F6E8EA;
+    light blue: #48639C;
+    dark blue: #0A2463;
+    purple: #B8336A;
+*/
+
+/*Font front Google
+font-family: 'Lalezar', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Muli', sans-serif;
+*/
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/*---------------Navbar Styling--------------------*/
+.navbar.navbar-inverse {
+    font-family: 'Lalezar', cursive;
+    font-size: 20px;
+    min-height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-color: #0A2463;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+
+.brandLogo {
+    height: 60px;
+    width: auto;
+    padding-bottom: 15px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-family: inherit;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background-color: #B8336A;
+    }
+
+.navbar-inverse .navbar-brand:hover {
+    color: #B8336A;
+    background-color: transparent;
+}
+
+div.navbar-collapse.collapse.navbar-right {
+    padding-top: 18px;
+}
+
+div.navbar-header {
+    min-height: 80px;
+    border-bottom-color: #0A2463;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #B8336A;
+}
+
+.bg-primary {
+    background-color: #0A2463;
+    color: #B8336A;
+}
+
+button.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/*Sets the breakpoint of the navbar collapse. Change the first line "@media (max-width: 1100px) */
+@media (max-width: 910px) {
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left, .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+    .collapse.in {
+        display: block !important;
+    }
+}
+
+
+/*-----------------Carousel Styling----------------*/
+
+.container-fluid.carouselFormat {
+    margin: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.carousel .item img {
+    max-height: 450px;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+.btn.ask {
+    background: #48639C;
+    padding-right: 20px;
+    width: 200px;
+}
+
+.btn.help {
+    background: #976391;
+    padding-left: 10px;
+    width: 200px;
+}
+
+/*-----------------Button Styling----------------*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #0A2463;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  color: #B8336A;
+}
+.glyphicon.glyphicon-menu-up {
+    font-size: 50px;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

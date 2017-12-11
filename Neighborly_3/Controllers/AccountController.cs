@@ -151,7 +151,7 @@ namespace Neighborly_3.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { Email = model.Email, UserName = model.UserName,  StreetAddress = model.StreetAddress };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, StreetAddress = model.StreetAddress };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

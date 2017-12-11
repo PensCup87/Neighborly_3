@@ -183,7 +183,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Item.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\Task2Controller.cs" />
@@ -239,6 +238,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\autumn-mott-15013.jpg" />
+    <Content Include="Content\Images\daniel-watson-75022.jpg" />
+    <Content Include="Content\Images\filip-mroz-183687.jpg" />
+    <Content Include="Content\Images\Logomakr_4ALkYR.png" />
+    <Content Include="Content\Images\Logomakr_revised.png" />
+    <Content Include="Content\Images\markus-spiske-104913.jpg" />
+    <Content Include="Content\Images\office_stock_photo.jpeg" />
+    <Content Include="Content\Images\roman-kraft-60298.jpg" />
+    <Content Include="Content\Images\shane-rounce-268118.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
