@@ -1,6 +1,8 @@
 ﻿body {
-    /*padding-top: 50px;*/
-    padding-bottom: 20px;
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    background: #F6E8EA;
+    font: 14px/24px 'Muli', sans-serif;
 }
 
 /*Color Pallet
@@ -27,12 +29,82 @@ font-family: 'Muli', sans-serif;
 
 /*Navbar Styling*/
 .navbar.navbar-inverse {
-    height: 100px;
+    font-family: 'Lalezar', cursive;
+    font-size: 20px;
+    min-height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-color: #0A2463;
 }
+
+.brandLogo {
+    height: 60px;
+    width: auto;
+    padding-bottom: 15px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-family: inherit;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+div.navbar-collapse.collapse.navbar-right {
+    padding-top: 18px;
+}
+
 
 .bg-primary {
     background-color: #0A2463;
     text-emphasis-color: #B8336A;
+}
+
+/*Sets the breakpoint of the navbar collapse. Change the first line "@media (max-width: 1100px) */
+@media (max-width: 1120px) {
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left, .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+    .collapse.in {
+        display: block !important;
+    }
 }
 
 

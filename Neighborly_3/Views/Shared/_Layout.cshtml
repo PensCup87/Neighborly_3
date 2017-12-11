@@ -19,7 +19,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Neighborly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    <span>
+                        <img alt="Brand" src="@Url.Content("~/Content/Images/Logomakr_4ALkYR.png")" class="brandLogo"/>
+                        Neighborly
+                    </span>
+                </a>
+
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
