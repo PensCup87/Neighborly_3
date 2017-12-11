@@ -6,9 +6,10 @@
 }
 
 /*Color Pallet
-      background: #F6E8EA;
-background-color: #0A2463;
-      color: #B8336A;
+    light pink: #F6E8EA;
+    light blue: #48639C;
+    dark blue: #0A2463;
+    purple: #B8336A;
 
 
 
@@ -27,7 +28,7 @@ font-family: 'Muli', sans-serif;
     padding-right: 15px;
 }
 
-/*Navbar Styling*/
+/*---------------Navbar Styling--------------------*/
 .navbar.navbar-inverse {
     font-family: 'Lalezar', cursive;
     font-size: 20px;
@@ -36,6 +37,11 @@ font-family: 'Muli', sans-serif;
     padding-right: 30px;
     border-bottom-color: #0A2463;
 }
+
+/*.nav.navbar-nav.navbar-right li {
+    color: #B8336A;
+}*/
+
 
 .brandLogo {
     height: 60px;
@@ -50,18 +56,54 @@ font-family: 'Muli', sans-serif;
     font-weight: 700;
 }
 
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background-color: #B8336A;
+    }
+
+.navbar-inverse .navbar-brand:hover {
+    color: #B8336A;
+    background-color: transparent;
+}
+
 div.navbar-collapse.collapse.navbar-right {
     padding-top: 18px;
 }
+div.navbar-header {
+    min-height: 80px;
+    border-bottom-color: #0A2463;
+}
 
+.navbar-inverse .navbar-nav > li > a {
+    color: #B8336A;
+}
 
 .bg-primary {
     background-color: #0A2463;
-    text-emphasis-color: #B8336A;
+    color: #B8336A;
+}
+button.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 /*Sets the breakpoint of the navbar collapse. Change the first line "@media (max-width: 1100px) */
-@media (max-width: 1120px) {
+@media (max-width: 910px) {
     .navbar-header {
         float: none;
     }
@@ -105,6 +147,18 @@ div.navbar-collapse.collapse.navbar-right {
     .collapse.in {
         display: block !important;
     }
+}
+
+
+
+.btn.ask {
+    background: #48639C;
+    padding-right: 20px;
+}
+
+.btn.help {
+    background: #976391;
+    padding-left: 10px;
 }
 
 
