@@ -1,13 +1,40 @@
 ﻿body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 20px;
 }
+
+/*Color Pallet
+      background: #F6E8EA;
+background-color: #0A2463;
+      color: #B8336A;
+
+
+
+*/
+
+/*Font front Google
+font-family: 'Lalezar', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Muli', sans-serif;
+*/
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+/*Navbar Styling*/
+.navbar.navbar-inverse {
+    height: 100px;
+}
+
+.bg-primary {
+    background-color: #0A2463;
+    text-emphasis-color: #B8336A;
+}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
