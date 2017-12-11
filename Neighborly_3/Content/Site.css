@@ -76,6 +76,7 @@ font-family: 'Muli', sans-serif;
 div.navbar-collapse.collapse.navbar-right {
     padding-top: 18px;
 }
+
 div.navbar-header {
     min-height: 80px;
     border-bottom-color: #0A2463;
@@ -89,6 +90,7 @@ div.navbar-header {
     background-color: #0A2463;
     color: #B8336A;
 }
+
 button.navbar-toggle {
     position: relative;
     float: right;
@@ -149,6 +151,38 @@ button.navbar-toggle {
     }
 }
 
+
+/*-----------------Carousel Styling----------------*/
+div.carousel-inner.carouselPhoto1 {
+    max-height: 500px;
+    background-image: url('Images/autumn-mott-15013.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.carousel-inner.carouselPhoto2 {
+    max-height: 500px;
+    background-image: url('Images/daniel-watson-75022.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.carousel-inner.carouselPhoto3 {
+    max-height: 500px;
+    background-image: url('Images/filip-mroz-183687.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.carousel-inner.carouselPhoto4 {
+    max-height: 500px;
+    background-image: url('Images/markus-spiske-104913.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.carouselPhoto5 {
+    max-height: 500px;
+    background-image: url('Images/shane-rounce-268118.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 .btn.ask {
