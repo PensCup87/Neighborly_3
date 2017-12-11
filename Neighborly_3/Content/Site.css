@@ -166,18 +166,19 @@ button.navbar-toggle {
 .carousel .item img {
     max-height: 450px;
     min-width: 100%;
-    overflow:hidden;
-
+    overflow: hidden;
 }
 
 .btn.ask {
     background: #48639C;
     padding-right: 20px;
+    width: 200px;
 }
 
 .btn.help {
     background: #976391;
     padding-left: 10px;
+    width: 200px;
 }
 
 
