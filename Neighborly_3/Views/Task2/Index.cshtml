@@ -35,53 +35,10 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div>
-                    <div id="card">
-                        <div class="front">
-                            <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
-                            <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
-                            <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
-                        </div>
-                        <div class="back">
-                            <h3>
-                                @Html.DisplayNameFor(model => model.TaskTitle)
-                            </h3>
-
-                            <h3>
-                                @Html.DisplayFor(modelItem => item.TaskTitle)
-                            </h3>
-
-
-                            <p>
-                                @Html.DisplayNameFor(model => model.TaskDescription)
-                            </p>
-
-                            <p>
-                                @Html.DisplayFor(modelItem => item.TaskDescription)
-                            </p>
-
-
-                            <p>
-                                @Html.DisplayNameFor(model => model.IsDone)
-                            </p>
-
-                            <p>
-                                @Html.DisplayFor(modelItem => item.IsDone)
-                            </p>
-
-                            <p>
-                                @Html.DisplayNameFor(model => model.TimeStamp)
-                            </p>
-
-                            <>
-                                @Html.DisplayFor(modelItem => item.TimeStamp)
-                            </>
-                        </div>
-                    </div>
-                    $("#card").flip({
-                    axis: 'y',
-                    trigger: 'hover'
-                    });
-                            <p>
+                    <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
+                    <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
+                    <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
+                    <p>
                                 @if (ViewBag.userID == item.TaskCreatorID)
                                 {
                                     @Html.DisplayNameFor(model => model.IsDone)
