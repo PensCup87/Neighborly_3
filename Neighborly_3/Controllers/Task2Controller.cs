@@ -16,7 +16,7 @@ namespace Neighborly_3.Controllers
         private FinalProjectEntities db = new FinalProjectEntities();
 
         // GET: Task2/Items Search and Sort
-        public ActionResult Index(string search, string sort)
+        public ActionResult Index(string search, string sort, int? id)
         {
             var items = from t in db.Task2
                         select t;
@@ -63,6 +63,7 @@ namespace Neighborly_3.Controllers
                            select u).Single();
 
             ViewBag.Address = taskUser.StreetAddress;
+            ViewBag.UserName = taskUser.UserName;
             return View(task2);
         }
 
