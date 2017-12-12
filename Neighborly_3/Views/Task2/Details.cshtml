@@ -71,6 +71,8 @@
     </dl>
 </div>
 
+<h2>@ViewBag.UserName</h2>
+
 <body>
     <div id="map"></div>
     <style>
@@ -140,7 +142,7 @@
 </div>
 
 <p>
-    @Html.ActionLink("Offer Help", "Edit", new { id = Model.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>) |
+    @Html.ActionLink("Offer Help", "Edit", new { id = Model.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text> |
     @Html.ActionLink("Back to List", "Index")
 </p>
 @*@Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>*@
