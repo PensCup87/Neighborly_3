@@ -334,3 +334,25 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* FAQ Styling */
+.FAQTitle {
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.fixButton {
+    margin-right: 210px;
+}
+
+.answer {
+    text-align: center;
+    padding: 0px 100px 0px 100px;
+}
+
+.question {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bolder;
+}

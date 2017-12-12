@@ -36,6 +36,7 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div>
+                    @*<h2>Task Creator: @(ViewBag.creatorName)</h2>*@
                     <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
                     <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
                     <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
