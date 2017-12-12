@@ -210,6 +210,25 @@ button.navbar-toggle {
     -webkit-transition: opacity .25s ease-in-out;
 }
 
+/*-----Carousel shrinking images with screen size-------*/
+@media (min-width: 200px) {
+  div.test > img{ height: 300px !important ;}
+}
+
+@media (min-width: 300px) {
+  div.test > img{ height: 300px !important; }
+}
+
+@media (min-width: 400px) {
+  div.test > img{ height: 300px !important; }
+}
+@media (min-width: 600px) {
+  div.test > img{ height: 400px !important ;}
+}
+@media, (min-width: 800px) {
+  div.test > img{ height: 600px !important ; }
+}
+
 /*-----------------Button Styling----------------*/
 #myBtn {
     display: none;
