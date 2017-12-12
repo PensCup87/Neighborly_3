@@ -237,3 +237,7 @@ textarea {
     padding-bottom: 20px;
     font-weight: bolder;
 }
+.thumbnail{
+    min-height: 270px;
+    max-width:500px;
+}
