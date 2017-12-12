@@ -253,7 +253,7 @@ button.navbar-toggle {
     font-weight: 800;
     font-family: "Lalezar", cursive;
     margin-bottom: 60px;
-    color: black;  
+    color: black;
 }
 
 .landingFormat h3 {
@@ -262,22 +262,27 @@ button.navbar-toggle {
     font-family: "Lalezar", cursive;
     color: black;
 }
+
 .landingFormat h4 {
     font-size: 27px;
     color: black;
 }
+
 landingFormat div {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .landingFormat a.btn {
     margin-top: 33px;
     width: 278px;
 }
+
 .btn.help {
     background: #976391;
     padding-left: 10px;
 }
+
 .landingFormat a.btn {
     width: 175px;
     border: 1px solid #000000;
@@ -288,18 +293,20 @@ landingFormat div {
     text-transform: uppercase;
     color: #000000;
     margin-top: 20px;
-} 
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
     -webkit-transition: 0.3s all ease;
     transition: 0.3s all ease;
 }
+
 .landingFormat a.btn.ask {
     background: #48639C;
     padding-right: 20px;
     width: 200px;
-    }
+}
 
 .landingFormat a.btn.help {
     background: #976391;
@@ -309,15 +316,33 @@ a {
 
 
 /*FOOTER STYLE*/
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
 
-.bannerFooter {
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
     height: 80px;
     padding: 15px;
     text-align: center;
-    color: white;
+    background-color: #f5f5f5;
+    text-align: center;
     background-color: #0A2463;
-    margin: 0px;
+    color: white;
 }
+
 
 
 

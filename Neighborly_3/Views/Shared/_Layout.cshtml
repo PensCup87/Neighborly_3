@@ -11,44 +11,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-static-top bg-primary">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                    <span>
-                        <img alt="Brand" src="@Url.Content("~/Content/Images/Logomakr_4ALkYR.png")" class="brandLogo" />Neighborly
-                    </span>
-                </a>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+        <div class="navbar navbar-inverse navbar-static-top bg-primary">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <span>
+                            <img alt="Brand" src="@Url.Content("~/Content/Images/Logomakr_4ALkYR.png")" class="brandLogo" />Neighborly
+                        </span>
+                    </a>
 
-            </div>
-            <div class="navbar-collapse collapse navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Request Help", "Create", "Task2")</li>
-                    <li>@Html.ActionLink("Tasks", "Index", "Task2")</li>
-                    @*<li>@Html.ActionLink("Messages", "Index", "Messages")</li>*@
-                    <li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Request Help", "Create", "Task2")</li>
+                        <li>@Html.ActionLink("Tasks", "Index", "Task2")</li>
+                        @*<li>@Html.ActionLink("Messages", "Index", "Messages")</li>*@
+                        <li>@Html.ActionLink("FAQ", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid body-content">
-        <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
-        @RenderBody()
-        <hr />
+        <div class="container-fluid body-content">
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+            @RenderBody()
+            <hr />
+        </div>
+
     </div>
     <!--FOOTER-->
-    <div class="row bannerFooter">
+    <div id="footer" class="container-fluid">
         <footer>Created by: Brad Sweet, Monica Perez, J.D. Golden, Nickolas Beorn, Rashida McWilliams, Brian Tome</footer>
         <footer>&copy; @DateTime.Now.Year - Neighborly</footer>
-
     </div>
     <script>
         // When the user scrolls down 50px from the top of the document, show the button
