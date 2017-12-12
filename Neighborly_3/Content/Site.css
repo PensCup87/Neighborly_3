@@ -166,18 +166,6 @@ button.navbar-toggle {
     overflow: hidden;
 }
 
-.btn.ask {
-    background: #48639C;
-    padding-right: 20px;
-    width: 200px;
-}
-
-.btn.help {
-    background: #976391;
-    padding-left: 10px;
-    width: 200px;
-}
-
 .carousel-caption h1 span {
     font-size: 50px;
     color: rgb(255, 255, 255);
@@ -249,18 +237,74 @@ button.navbar-toggle {
 /*--------------------Landing page Style---------------*/
 
 .container.landingFormat {
-    padding-top:70px;
+    padding-top: 70px;
     text-align: center;
 }
-    .container.landingFormat 
 
-.landingFormat img {
-    vertical-align: middle;
-    height: auto;
-    width: 100%;
-    max-width: 934px;
+    .container.landingFormat img {
+        vertical-align: middle;
+        height: auto;
+        width: 100%;
+        max-width: 934px;
+    }
+
+.landingFormat h2 {
+    font-size: 72px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    margin-bottom: 60px;
+    color: black;  
 }
-.landingFormat h1 {
+
+.landingFormat h3 {
+    font-size: 45px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    color: black;
+}
+.landingFormat h4 {
+    font-size: 27px;
+    color: black;
+}
+landingFormat div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.landingFormat a.btn {
+    margin-top: 33px;
+    width: 278px;
+}
+.btn.help {
+    background: #976391;
+    padding-left: 10px;
+}
+.landingFormat a.btn {
+    width: 175px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    display: inline-block;
+    font: 24px/46px 'Lalezar', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 20px;
+} 
+a {
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+.landingFormat a.btn.ask {
+    background: #48639C;
+    padding-right: 20px;
+    width: 200px;
+    }
+
+.landingFormat a.btn.help {
+    background: #976391;
+    padding-left: 10px;
+    width: 200px;
 }
 
 
