@@ -240,4 +240,5 @@ textarea {
 .thumbnail{
     min-height: 270px;
     max-width:500px;
+    /*background-color: #99ccff;*/
 }
