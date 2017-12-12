@@ -178,28 +178,105 @@ button.navbar-toggle {
     width: 200px;
 }
 
-/*-----------------Button Styling----------------*/
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #0A2463;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+.carousel-caption h1 span {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: "Carter One", cursive;
+    text-shadow: rgb(0, 0, 0) 1px 1px;
 }
 
-#myBtn:hover {
-  color: #B8336A;
+.carousel-indicators {
+    top: 50px;
 }
+
+    .carousel-indicators li {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #B8336A;
+        border-radius: 10px;
+    }
+
+    .carousel-indicators .active {
+        width: 17px;
+        height: 17px;
+        margin: 0;
+        background-color: #0A2463;
+    }
+
+.item.next .carousel-caption {
+    opacity: 0;
+}
+
+.carousel-caption {
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+/*-----------------Button Styling----------------*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0A2463;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+    #myBtn:hover {
+        color: #B8336A;
+    }
+
 .glyphicon.glyphicon-menu-up {
     font-size: 50px;
 }
+
+/*--------------------Landing page Style---------------*/
+
+.container.landingFormat {
+    padding-top:70px;
+    text-align: center;
+}
+    .container.landingFormat 
+
+.landingFormat img {
+    vertical-align: middle;
+    height: auto;
+    width: 100%;
+    max-width: 934px;
+}
+.landingFormat h1 {
+}
+
+
+
+
+/*FOOTER STYLE*/
+
+.bannerFooter {
+    height: 80px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    background-color: #0A2463;
+    margin: 0px;
+}
+
 
 
 /* Override the default bootstrap behavior where horizontal description lists 

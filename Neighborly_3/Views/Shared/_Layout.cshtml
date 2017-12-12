@@ -8,6 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/JavaScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-static-top bg-primary">
@@ -42,9 +43,11 @@
         <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    </div>
+    <!--FOOTER-->
+    <div class="row bannerFooter">
+        <footer>Created by: Brad Sweet, Monica Perez, JD, Nickolas Boern, Rashida McWilliams, Brian Tome</footer>
+        <footer>&copy; @DateTime.Now.Year - My ASP.NET Application</footer>
     </div>
     <script>
         // When the user scrolls down 50px from the top of the document, show the button
