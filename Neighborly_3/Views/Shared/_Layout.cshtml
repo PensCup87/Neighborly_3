@@ -8,15 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/JavaScript.js"></script>
-    @*<script src="~/Scripts/jquery.flip.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#card").flip({
-                axis: 'y',
-                trigger: 'hover'
-                });
-        });*@
-    </script>
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-static-top bg-primary">
@@ -77,5 +69,16 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery.flip.min.js"></script>
+    @RenderSection("flipJS", required:false)
+
+    @*<script>
+        $(document).ready(function(){
+            $(".card").flip({
+                axis: 'y',
+                trigger: 'hover'
+                });
+        });
+    </script>*@
 </body>
 </html>

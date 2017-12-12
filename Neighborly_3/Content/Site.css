@@ -237,3 +237,15 @@ textarea {
     padding-bottom: 20px;
     font-weight: bolder;
 }
+
+.taskIndex {
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 42px;
+    color: #0A2463;
+}
+
+.card {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+}
