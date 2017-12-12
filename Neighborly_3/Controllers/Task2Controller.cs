@@ -42,6 +42,12 @@ namespace Neighborly_3.Controllers
 
             //Identifies user based on log in
             ViewBag.userID = User.Identity.GetUserId();
+
+
+            
+
+
+
             return View(items.ToList());
         }
 
