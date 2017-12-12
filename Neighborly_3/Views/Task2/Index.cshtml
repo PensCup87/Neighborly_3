@@ -25,9 +25,9 @@
 
 <div class="row">
     <div class="container taskIndex">
-        <h2>Pick a task and meet your neighbor</h2>
+        <h2>Pick A Task And Meet Your Neighbor</h2>
         <p>
-            @Html.ActionLink("I need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default", role = "button" })
+            @Html.ActionLink("I Need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default", role = "button" })
         </p>
     </div>
 </div>
@@ -43,7 +43,7 @@
                         <div class="front">
                             <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
                             <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
-                            <p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>
+                            @*<p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>*@
                         </div>
                         <div class="back">
                             <h3>
@@ -99,8 +99,8 @@
                                     </a>
                                 }
                             <p>
-                                @*@Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })*@
-                                @Html.ActionLink("Help Provider", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
+                                @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
+                                @Html.ActionLink("I Want To Help", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
                                 @if (ViewBag.userID == item.TaskCreatorID)
                                 {
                                     @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>

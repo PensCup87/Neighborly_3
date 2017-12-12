@@ -245,6 +245,10 @@ textarea {
     color: #0A2463;
 }
 
+.taskIndex>h2 {
+    font-size: 42px;
+}
+
 .card {
     font-family: 'Muli', sans-serif;
     font-size: 18px;
