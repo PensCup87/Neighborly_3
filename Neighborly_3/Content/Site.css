@@ -215,3 +215,7 @@ select,
 textarea {
     max-width: 280px;
 }
+.thumbnail{
+    min-height: 280px;
+    max-width: 500px;
+}
