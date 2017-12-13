@@ -28,8 +28,8 @@
             @using (Html.BeginForm()) //"page","Controller", formMethod invokes get method from controller
             {
                 //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
-                @Html.RadioButton("sort", "Descending", true)<span>Sort Oldest</span>
-                @Html.RadioButton("sort", "Ascending")<span>Sort Newest</span>
+                @Html.RadioButton("sort", "Descending", true)<span>Newest First</span>
+                @Html.RadioButton("sort", "Ascending")<span>Oldest First</span>
                 @Html.TextBox("search");
                 <input type="submit" name="submit" value="Search" />
             }
@@ -40,7 +40,7 @@
             <h4>Click on a Task card to see description</h4>
         </div>
     </div>
-    <div class="row">
+    <div class="row marginFormat">
         @foreach (var item in Model)
         {
             <div class="col-sm-6 col-md-4">
@@ -56,19 +56,14 @@
                         <h2>
                             @Html.DisplayFor(modelItem => item.TaskTitle)
                         </h2>
-
-                        <p>
-                            @Html.DisplayFor(modelItem => item.TaskDescription)
-                        </p>
-
-                        <p>
-                            @Html.DisplayFor(modelItem => item.IsDone)
-                        </p>
-
                         <p>
                             @Html.DisplayFor(modelItem => item.TimeStamp)
                         </p>
-                        <div class="bottom">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.TaskDescription)
+                        </p>
+                        
+                        <div>
                             <p>
                                 @if (ViewBag.userID == item.TaskCreatorID)
                                 {
@@ -109,12 +104,12 @@
                                     }
                                 }
                             </p>
-                            <p>
+                            <p class="bottom">
                                 @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default ask", role = "button" })
                                 @Html.ActionLink("I Want To Help", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default help", role = "button" })
                                 @if (ViewBag.userID == item.TaskCreatorID)
                 {
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default ask", role = "button" })<text> </text>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default ask", @style = "display:none", role = "button" })
                                     @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default help", role = "button" })
                                 }
                             </p>

@@ -446,6 +446,7 @@ div.card {
     font-family: 'Muli', sans-serif;
     font-size: 18px;
     margin: 0px;
+    height: 400px;
 }
 
 .front.taskCard {
@@ -455,9 +456,13 @@ div.card {
 }
 
 .back.taskCard {
-    min-height: 400px;
+    height: 400px;
     background-color: #F6E8EA;
 }
+
+    .back.taskCard > p {
+        overflow: hidden;
+    }
 
 
 .taskCard {
@@ -468,22 +473,32 @@ div.card {
     border: 5px #0A2463 solid;
 }
 
-    .taskCard.thumbnail {
-        min-height: 400px;
+    .taskCard.thumbnail.back {
+        height: 400px;
+        margin: 0px;
     }
 
-
-    .taskCard h2 {
-        font-family: 'Lalezar', cursive;
-        font-weight: 400;
+    .taskCard.thumbnail.front {
+        height: 400px;
+        margin: 0px;
     }
 
-.card.wrapper {
+div.col-sm-6.col-md-4 {
+    margin-bottom: 15px;
+}
+
+.taskCard h2 {
+    font-family: 'Lalezar', cursive;
+    font-weight: 400;
+}
+
+.wrapper {
     position: relative;
     padding-bottom: 50px;
 }
 
-    .card.wrapper.bottom {
+    .wrapper .bottom {
+        justify-content: center;
         position: absolute;
         bottom: 0px;
         height: 50px;
@@ -492,6 +507,7 @@ div.card {
 .btn.btn-default.ask {
     border: 1px solid #000000;
     font: 18px 'Lalezar', cursive;
+    color: black;
     text-align: center;
     text-transform: uppercase;
     background: #48639C;
@@ -504,6 +520,7 @@ div.card {
     color: black;
     font: 18px 'Lalezar', cursive;
     text-align: center;
+    color: black;
     text-transform: uppercase;
     background: #B8336A;
     padding-left: 10px;
