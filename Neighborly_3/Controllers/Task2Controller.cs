@@ -64,6 +64,7 @@ namespace Neighborly_3.Controllers
 
             ViewBag.Address = taskUser.StreetAddress;
             ViewBag.UserName = taskUser.UserName;
+            ViewBag.Email = taskUser.Email;
             return View(task2);
         }
 

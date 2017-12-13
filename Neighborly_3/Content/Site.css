@@ -552,14 +552,14 @@ div.col-sm-6.col-md-4 {
     width: 525px;
     margin: auto;
     margin-top: 50px;
-    border: 3px black solid;
+    border: 5px #0A2463 solid;
     border-radius: 25px;
-    background-color: #0A2463;
+    background: linear-gradient(to bottom right, #b5c0d7, #7e91b9);
 }
 
 .centerText {
     text-align: center;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 42px;
 }
