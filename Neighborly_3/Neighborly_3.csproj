@@ -248,6 +248,7 @@
     <Content Include="Content\Images\office_stock_photo.jpeg" />
     <Content Include="Content\Images\roman-kraft-60298.jpg" />
     <Content Include="Content\Images\shane-rounce-268118.jpg" />
+    <Content Include="Content\lockHands.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

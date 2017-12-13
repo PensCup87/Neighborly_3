@@ -400,3 +400,14 @@ textarea {
     padding-bottom: 20px;
     font-weight: bolder;
 }
+
+div img.aboutPhoto {
+    height: 350px;
+    width: 575px;
+}
+
+.AboutUsTitle {
+    font-family: 'Carter One', cursive;
+    
+}
+
