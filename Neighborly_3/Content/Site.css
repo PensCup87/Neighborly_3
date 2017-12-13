@@ -395,25 +395,27 @@ textarea {
 
 /* FAQ Styling */
 .FAQTitle {
-    padding-top: 50px;
+    font-family: 'Carter One', cursive;
+    font-size: 70px;
     text-align: center;
-    padding-bottom: 50px;
+
 }
 
+.question {
+    font-family: 'Lalezar', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+.answer {
+    font-size: 30px;
+    text-align: center;
+}
 .fixButton {
     margin-right: 210px;
 }
 
-.answer {
-    text-align: center;
-    padding: 0px 100px 0px 100px;
-}
 
-.question {
-    text-align: center;
-    padding-bottom: 20px;
-    font-weight: bolder;
-}
 
 
 /*---------------Task2 index page Styling------------------*/
@@ -553,3 +555,11 @@ div.card {
     height: 200px;
 }
 
+/* About Us */
+.AboutUsTitle {
+    font-family: 'Carter One', cursive;
+    
+}
+.manageView{
+font-family: 'Carter One', cursive;
+}

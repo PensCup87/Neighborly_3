@@ -26,9 +26,11 @@ namespace Neighborly_3.Models
         public string TaskDescription { get; set; }
         [Display(Name = "Title")]
         public string TaskTitle { get; set; }
+        [Display(Name = "Done")]
         public Nullable<bool> IsDone { get; set; }
         [Display(Name = "Time Created")]
         public System.DateTime TimeStamp { get; set; }
+        [Display(Name = "Assigned")]
         public Nullable<bool> IsAssigned { get; set; }
         public string HelpProviderID { get; set; }
         public string TaskCreatorID { get; set; }
