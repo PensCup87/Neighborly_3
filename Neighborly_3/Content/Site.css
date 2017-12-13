@@ -395,29 +395,41 @@ textarea {
 
 /* FAQ Styling */
 .FAQTitle {
-    padding-top: 50px;
+    font-family: 'Carter One', cursive;
+    font-size: 70px;
     text-align: center;
-    padding-bottom: 50px;
+
 }
 
+.question {
+    font-family: 'Lalezar', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+.answer {
+    font-size: 30px;
+    text-align: center;
+}
 .fixButton {
     margin-right: 210px;
 }
 
-.answer {
-    text-align: center;
-    padding: 0px 100px 0px 100px;
-}
 
-.question {
-    text-align: center;
-    padding-bottom: 20px;
-    font-weight: bolder;
-}
+
 
 /*---------------Task2 index page Styling------------------*/
 .backgroundColor {
     background-color: white;
+}
+/* Details Styling */
+.detailsLeft {
+    padding-left: 40px;
+}
+
+.buttonsLeft {
+    padding-left: 60px;
+    padding-top: 20px;
 }
 
 .taskIndex {
@@ -431,6 +443,7 @@ textarea {
     background-image: url('Images/autumn-mott-15013.jpg');
 }
 
+
     .taskIndex > h2 {
         font-size: 42px;
     }
@@ -439,6 +452,11 @@ textarea {
     float: right;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+.lalazar {
+    font-family: 'Lalezar', cursive;
+
 }
 
 div.card {
@@ -525,4 +543,52 @@ div.col-sm-6.col-md-4 {
     background: #B8336A;
     padding-left: 10px;
     /*width: 100px;*/
+}
+
+/* Create Task View */
+.createThumbnail {
+    padding-top: 0px;
+    padding-left: 40px;
+    width: 525px;
+    margin: auto;
+    margin-top: 50px;
+    border: 3px black solid;
+    border-radius: 25px;
+    background-color: #0A2463;
+}
+
+.centerText {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.moveButton {
+    margin-left: 110px;
+}
+
+.textBox {
+    height: 200px;
+}
+
+/* About Us */
+.AboutUsTitle {
+    font-family: 'Carter One', cursive;
+    
+}
+.manageView{
+font-family: 'Carter One', cursive;
+}
+
+.aboutPhoto {
+    height: 350px;
+    width: 575px;
+    margin-left: 0px;
+    padding-right: 70px;
+}
+
+.aboutUsPgraph {
+    padding-right: 0px;
+    margin-right: 0px;
 }

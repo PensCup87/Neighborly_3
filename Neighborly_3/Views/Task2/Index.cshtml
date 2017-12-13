@@ -106,7 +106,7 @@
                             </p>
                             <p class="bottom">
                                 @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default ask", role = "button" })
-                                @Html.ActionLink("I Want To Help", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default help", role = "button" })
+                                @Html.ActionLink("Offer Help", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                                 @if (ViewBag.userID == item.TaskCreatorID)
                 {
                                     @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default ask", @style = "display:none", role = "button" })
