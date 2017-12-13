@@ -415,9 +415,19 @@ textarea {
     font-weight: bolder;
 }
 
+
 /*---------------Task2 index page Styling------------------*/
 .backgroundColor {
     background-color: white;
+}
+/* Details Styling */
+.detailsLeft {
+    padding-left: 40px;
+}
+
+.buttonsLeft {
+    padding-left: 60px;
+    padding-top: 20px;
 }
 
 .taskIndex {
@@ -431,6 +441,7 @@ textarea {
     background-image: url('Images/autumn-mott-15013.jpg');
 }
 
+
     .taskIndex > h2 {
         font-size: 42px;
     }
@@ -439,6 +450,11 @@ textarea {
     float: right;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+.lalazar {
+    font-family: 'Lalezar', cursive;
+
 }
 
 div.card {
@@ -509,3 +525,31 @@ div.card {
     padding-left: 10px;
     /*width: 100px;*/
 }
+
+/* Create Task View */
+.createThumbnail {
+    padding-top: 0px;
+    padding-left: 40px;
+    width: 525px;
+    margin: auto;
+    margin-top: 50px;
+    border: 3px black solid;
+    border-radius: 25px;
+    background-color: #0A2463;
+}
+
+.centerText {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+}
+
+.moveButton {
+    margin-left: 110px;
+}
+
+.textBox {
+    height: 200px;
+}
+
