@@ -67,6 +67,25 @@ namespace Neighborly_3.Controllers
             return View(task2);
         }
 
+        public ActionResult taskStatus(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Task2 item = db.Task2.Find(id);
+            
+            if (item.IsDone ?? false)
+            {
+                ViewBag.displayStatus = "No";
+            }
+            else
+            {
+                ViewBag.displayStatus = "Yes";
+            }
+            return RedirectToAction("Details");
+        }
+
         // GET: Task2/Create
         public ActionResult Create()
         {

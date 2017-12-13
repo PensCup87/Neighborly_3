@@ -400,3 +400,25 @@ textarea {
     padding-bottom: 20px;
     font-weight: bolder;
 }
+
+/* Details Styling */
+.detailsLeft {
+    padding-left: 40px;
+}
+.buttonsLeft {
+    padding-left: 60px;
+    padding-top: 20px;
+}
+
+.centerButton {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.lalazar {
+    font-family: 'Lalezar', cursive; 
+}
+
+.muli {
+    font-family: 'Muli', sans-serif;
+}
