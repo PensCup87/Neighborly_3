@@ -14,14 +14,6 @@
 <br />
 <br />
 
-@using (Html.BeginForm()) //"page","Controller", formMethod invokes get method from controller
-{
-    //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
-    @Html.RadioButton("sort", "Descending", true)<span>Sort Descending</span>
-    @Html.RadioButton("sort", "Ascending")<span>Sort Ascending</span>
-    @Html.TextBox("search");
-    <input type="submit" name="submit" value="Search" />
-}
 
 <div class="row">
     <div class="container taskIndex">
@@ -31,43 +23,48 @@
         </p>
     </div>
 </div>
-
+<div>
+    @using (Html.BeginForm()) //"page","Controller", formMethod invokes get method from controller
+    {
+        //names "search" match. most of the time these are strings. int.parse if you need it to be an int.
+        @Html.RadioButton("sort", "Descending", true)<span>Sort Oldest</span>
+        @Html.RadioButton("sort", "Ascending")<span>Sort Newest</span>
+        @Html.TextBox("search");
+        <input type="submit" name="submit" value="Search" />
+    }
+</div>
 
 <div class="row">
     @foreach (var item in Model)
     {
         <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <div>
-                    <div class="card">
-                        <div class="front">
-                            <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
-                            <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
-                            @*<p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>*@
-                        </div>
-                        <div class="back">
-                            <h3>
-                                @Html.DisplayNameFor(model => model.TaskTitle): @Html.DisplayFor(modelItem => item.TaskTitle)
-                            </h3>
+            <div class="card">
+                <div class="thumbnail front">
+                    <h3>@Html.DisplayFor(modelItem => item.TaskTitle)</h3>
+                    <p>Posted : @Html.DisplayFor(modelItem => item.TimeStamp)</p>
+                    @*<p>@Html.DisplayFor(modelItem => item.TaskDescription)</p>*@
 
-                            <p>
-                                @Html.DisplayNameFor(model => model.TaskDescription): @Html.DisplayFor(modelItem => item.TaskDescription)
-                            </p>
 
-                            <p>
-                                @Html.DisplayNameFor(model => model.IsDone): @Html.DisplayFor(modelItem => item.IsDone)
-                            </p>
-
-                            <p>
-                                @Html.DisplayNameFor(model => model.TimeStamp): @Html.DisplayFor(modelItem => item.TimeStamp)
-                            </p>
-
-                        </div>
-                    </div>
+                </div>
+                <div class="thumbnail back">
+                    <h3>
+                        @Html.DisplayNameFor(model => model.TaskTitle): @Html.DisplayFor(modelItem => item.TaskTitle)
+                    </h3>
 
                     <p>
+                        @Html.DisplayNameFor(model => model.TaskDescription): @Html.DisplayFor(modelItem => item.TaskDescription)
+                    </p>
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.IsDone): @Html.DisplayFor(modelItem => item.IsDone)
+                    </p>
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.TimeStamp): @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </p>
+                    <p>
                         @if (ViewBag.userID == item.TaskCreatorID)
-                        {
+                {
                             @Html.DisplayNameFor(model => model.IsDone)
                             <a href="@Url.Action("ToggleDone", new { id = item.TaskID })" />
 
@@ -109,14 +106,18 @@
                         @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         @Html.ActionLink("I Want To Help", "Details", new { id = item.HelpProviderID }, new { @class = "btn btn-default", role = "button" })
                         @if (ViewBag.userID == item.TaskCreatorID)
-                        {
+                {
                             @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })<text> </text>
                             @Html.ActionLink("Delete", "Delete", new { id = item.TaskID }, new { @class = "btn btn-default", role = "button" })
                         }
                     </p>
                 </div>
             </div>
+
+
         </div>
+
+
     }
 </div>
 @section flipJS
@@ -125,7 +126,7 @@
         $(document).ready(function () {
             $(".card").flip({
                 axis: 'y',
-                trigger: 'hover'
+                trigger: 'click'
             });
         });
     </script>
