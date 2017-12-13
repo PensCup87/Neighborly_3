@@ -19,6 +19,8 @@ font-family: 'Muli', sans-serif;
 */
 
 
+
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -51,7 +53,7 @@ font-family: 'Muli', sans-serif;
 }
 
 .navbar-brand {
-    font-family: inherit;
+    font-family: 'Carter One', cursive;
     font-size: 40px;
     font-weight: 700;
 }
@@ -212,21 +214,33 @@ button.navbar-toggle {
 
 /*-----Carousel shrinking images with screen size-------*/
 @media (min-width: 200px) {
-  div.test > img{ height: 300px !important ;}
+    div.test > img {
+        height: 300px !important;
+    }
 }
 
 @media (min-width: 300px) {
-  div.test > img{ height: 300px !important; }
+    div.test > img {
+        height: 300px !important;
+    }
 }
 
 @media (min-width: 400px) {
-  div.test > img{ height: 300px !important; }
+    div.test > img {
+        height: 300px !important;
+    }
 }
+
 @media (min-width: 600px) {
-  div.test > img{ height: 400px !important ;}
+    div.test > img {
+        height: 400px !important;
+    }
 }
+
 @media, (min-width: 800px) {
-  div.test > img{ height: 600px !important ; }
+    div.test > img {
+        height: 600px !important;
+    }
 }
 
 /*-----------------Button Styling----------------*/
@@ -399,4 +413,99 @@ textarea {
     text-align: center;
     padding-bottom: 20px;
     font-weight: bolder;
+}
+
+/*---------------Task2 index page Styling------------------*/
+.backgroundColor {
+    background-color: white;
+}
+
+.taskIndex {
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 42px;
+    color: white;
+    border: 3px black solid;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    background-image: url('Images/autumn-mott-15013.jpg');
+}
+
+    .taskIndex > h2 {
+        font-size: 42px;
+    }
+
+.searchFormat {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+div.card {
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.front.taskCard {
+    vertical-align: middle;
+    background: linear-gradient(to bottom right, #b5c0d7, #7e91b9);
+    /*background-color: #b5c0d7;*/
+}
+
+.back.taskCard {
+    min-height: 400px;
+    background-color: #F6E8EA;
+}
+
+
+.taskCard {
+    text-align: center;
+    padding: 25px;
+    min-height: 400px;
+    margin: 15px;
+    border: 5px #0A2463 solid;
+}
+
+    .taskCard.thumbnail {
+        min-height: 400px;
+    }
+
+
+    .taskCard h2 {
+        font-family: 'Lalezar', cursive;
+        font-weight: 400;
+    }
+
+.card.wrapper {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+    .card.wrapper.bottom {
+        position: absolute;
+        bottom: 0px;
+        height: 50px;
+    }
+
+.btn.btn-default.ask {
+    border: 1px solid #000000;
+    font: 18px 'Lalezar', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    background: #48639C;
+    padding-right: 10px;
+    /*width: 100px;*/
+}
+
+.btn.btn-default.help {
+    border: 1px solid #000000;
+    color: black;
+    font: 18px 'Lalezar', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    background: #B8336A;
+    padding-left: 10px;
+    /*width: 100px;*/
 }
