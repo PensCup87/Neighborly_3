@@ -166,40 +166,203 @@ button.navbar-toggle {
     overflow: hidden;
 }
 
-.btn.ask {
-    background: #48639C;
-    padding-right: 20px;
-    width: 200px;
+.carousel-caption h1 span {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: "Carter One", cursive;
+    text-shadow: rgb(0, 0, 0) 1px 1px;
+}
+
+.carousel-indicators {
+    top: 50px;
+}
+
+    .carousel-indicators li {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 1px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #000 \9;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid #B8336A;
+        border-radius: 10px;
+    }
+
+    .carousel-indicators .active {
+        width: 17px;
+        height: 17px;
+        margin: 0;
+        background-color: #0A2463;
+    }
+
+.item.next .carousel-caption {
+    opacity: 0;
+}
+
+.carousel-caption {
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+/*-----Carousel shrinking images with screen size-------*/
+@media (min-width: 200px) {
+  div.test > img{ height: 300px !important ;}
+}
+
+@media (min-width: 300px) {
+  div.test > img{ height: 300px !important; }
+}
+
+@media (min-width: 400px) {
+  div.test > img{ height: 300px !important; }
+}
+@media (min-width: 600px) {
+  div.test > img{ height: 400px !important ;}
+}
+@media, (min-width: 800px) {
+  div.test > img{ height: 600px !important ; }
+}
+
+/*-----------------Button Styling----------------*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0A2463;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+    #myBtn:hover {
+        color: #B8336A;
+    }
+
+.glyphicon.glyphicon-menu-up {
+    font-size: 50px;
+}
+
+/*--------------------Landing page Style---------------*/
+
+.container.landingFormat {
+    padding-top: 70px;
+    text-align: center;
+}
+
+    .container.landingFormat img {
+        vertical-align: middle;
+        height: auto;
+        width: 100%;
+        max-width: 934px;
+    }
+
+.landingFormat h2 {
+    font-size: 72px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    margin-bottom: 60px;
+    color: black;
+}
+
+.landingFormat h3 {
+    font-size: 45px;
+    font-weight: 800;
+    font-family: "Lalezar", cursive;
+    color: black;
+}
+
+.landingFormat h4 {
+    font-size: 27px;
+    color: black;
+}
+
+landingFormat div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.landingFormat a.btn {
+    margin-top: 33px;
+    width: 278px;
 }
 
 .btn.help {
     background: #976391;
     padding-left: 10px;
+}
+
+.landingFormat a.btn {
+    width: 175px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    display: inline-block;
+    font: 24px/46px 'Lalezar', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.landingFormat a.btn.ask {
+    background: #48639C;
+    padding-right: 20px;
     width: 200px;
 }
 
-/*-----------------Button Styling----------------*/
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #0A2463;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+.landingFormat a.btn.help {
+    background: #976391;
+    padding-left: 10px;
+    width: 200px;
 }
 
-#myBtn:hover {
-  color: #B8336A;
+
+/*FOOTER STYLE*/
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
 }
-.glyphicon.glyphicon-menu-up {
-    font-size: 50px;
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
 }
+
+/* Set the fixed height of the footer here */
+#footer {
+    height: 80px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f5f5;
+    text-align: center;
+    background-color: #0A2463;
+    color: white;
+}
+
+
 
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -215,7 +378,25 @@ select,
 textarea {
     max-width: 280px;
 }
-.thumbnail{
-    min-height: 280px;
-    max-width: 500px;
+
+/* FAQ Styling */
+.FAQTitle {
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.fixButton {
+    margin-right: 210px;
+}
+
+.answer {
+    text-align: center;
+    padding: 0px 100px 0px 100px;
+}
+
+.question {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bolder;
 }
