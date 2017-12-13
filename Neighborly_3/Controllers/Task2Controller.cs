@@ -14,36 +14,38 @@ namespace Neighborly_3.Controllers
     public class Task2Controller : Controller
     {
         private FinalProjectEntities db = new FinalProjectEntities();
+        private object[] id;
 
         // GET: Task2/Items Search and Sort
-        public ActionResult Index(string search, string sort)
-        {
-            var items = from t in db.Task2
-                        select t;
+        //public ActionResult Index(string search, string sort)
+        //{
+        //    var items = from t in db.Task2
+        //                select t;
 
-            if (!String.IsNullOrEmpty(search))
-            {
-                items = items.Where(t => t.TaskTitle.Contains(search)
-                                       || t.TaskDescription.Contains(search));
-            }
+        //    if (!String.IsNullOrEmpty(search))
+        //    {
+        //        items = items.Where(t => t.TaskTitle.Contains(search)
+        //                               || t.TaskDescription.Contains(search));
+        //    }
 
-            if (sort == "Descending")
-            {
-                items = from item in items
-                        orderby item.TimeStamp descending
-                        select item;
-            }
-            else
-            {
-                items = from item in items
-                        orderby item.TimeStamp ascending
-                        select item;
-            }
+        //    if (sort == "Descending")
+        //    {
+        //        items = from item in items
+        //                orderby item.TimeStamp descending
+        //                select item;
+        //    }
+        //    else
+        //    {
+        //        items = from item in items
+        //                orderby item.TimeStamp ascending
+        //                select item;
+        //    }
 
-            //Identifies user based on log in
-            ViewBag.userID = User.Identity.GetUserId();
-            return View(items.ToList());
-        }
+        //    Task2 task1 = db.Task2.Find(id);
+        //    //Identifies user based on log in
+        //    //ViewBag.userID = User.Identity.GetUserId();
+        //    return View(items.ToList());
+        //}
 
         // GET: Task2/Details/5
         public ActionResult Details(int? id)

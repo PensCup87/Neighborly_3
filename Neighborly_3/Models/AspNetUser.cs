@@ -49,5 +49,10 @@ namespace Neighborly_3.Models
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Task2> Task2 { get; set; }
+
+        public static implicit operator AspNetUser(AspNetUser v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
