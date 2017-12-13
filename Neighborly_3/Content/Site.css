@@ -563,3 +563,15 @@ div.card {
 .manageView{
 font-family: 'Carter One', cursive;
 }
+
+.aboutPhoto {
+    height: 350px;
+    width: 575px;
+    margin-left: 0px;
+    padding-right: 70px;
+}
+
+.aboutUsPgraph {
+    padding-right: 0px;
+    margin-right: 0px;
+}
