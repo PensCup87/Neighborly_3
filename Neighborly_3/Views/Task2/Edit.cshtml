@@ -10,9 +10,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-       
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.TaskID)
@@ -20,16 +20,19 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TaskDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.TaskDescription, "", new { @class = "text-danger" })
+                @Html.DisplayFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.TaskTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.TaskTitle, "", new { @class = "text-danger" })
+                @Html.DisplayFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control" } })
+
             </div>
         </div>
 
@@ -46,8 +49,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TimeStamp, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control", @style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.TimeStamp, "", new { @class = "text-danger" })
+                @Html.DisplayFor(model => model.TimeStamp, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 
@@ -79,7 +83,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Confirm Your Help" class="btn btn-default" />
+                <input type="submit" value="Confirm Your Help" class="btn btn-default help" />
             </div>
         </div>
     </div>
