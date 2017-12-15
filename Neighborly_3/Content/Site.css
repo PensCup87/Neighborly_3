@@ -398,7 +398,6 @@ textarea {
     font-family: 'Carter One', cursive;
     font-size: 70px;
     text-align: center;
-
 }
 
 .question {
@@ -411,6 +410,7 @@ textarea {
     font-size: 30px;
     text-align: center;
 }
+
 .fixButton {
     margin-right: 210px;
 }
@@ -456,7 +456,6 @@ textarea {
 
 .lalazar {
     font-family: 'Lalezar', cursive;
-
 }
 
 div.card {
@@ -547,9 +546,10 @@ div.col-sm-6.col-md-4 {
 
 /* Create Task View */
 .createThumbnail {
+    justify-content: center;
     padding-top: 0px;
     padding-left: 40px;
-    width: 525px;
+    max-width: 525px;
     margin: auto;
     margin-top: 50px;
     border: 5px #0A2463 solid;
@@ -557,7 +557,9 @@ div.col-sm-6.col-md-4 {
     background: linear-gradient(to bottom right, #b5c0d7, #7e91b9);
 }
 
+
 .centerText {
+    justify-content: center;
     text-align: center;
     color: black;
     font-weight: bold;
@@ -575,10 +577,10 @@ div.col-sm-6.col-md-4 {
 /* About Us */
 .AboutUsTitle {
     font-family: 'Carter One', cursive;
-    
 }
-.manageView{
-font-family: 'Carter One', cursive;
+
+.manageView {
+    font-family: 'Carter One', cursive;
 }
 
 .aboutPhoto {
@@ -592,3 +594,29 @@ font-family: 'Carter One', cursive;
     padding-right: 0px;
     margin-right: 0px;
 }
+
+/*--------Login view Styling-----------*/
+
+.centerBox {
+    justify-content: center;
+    text-align: center;
+    max-width: 525px;
+    margin: auto;
+    margin-top: 50px;
+    border: 5px #0A2463 solid;
+    border-radius: 25px;
+}
+/*#loginForm {
+    justify-content:center;
+    text-align: center;
+}*/
+.form-control {
+    justify-content: center !important;
+    margin: 0px auto !important;
+    float: none;
+}
+
+.control-label {
+    text-align: center !important;
+}
+

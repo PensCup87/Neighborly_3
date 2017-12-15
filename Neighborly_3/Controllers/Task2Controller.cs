@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Neighborly_3.Controllers
 {
+    [Authorize]
     public class Task2Controller : Controller
     {
         private FinalProjectEntities db = new FinalProjectEntities();

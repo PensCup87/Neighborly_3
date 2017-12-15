@@ -19,7 +19,7 @@
         <div class="container taskIndex">
             <h2>Pick A Task And Meet Your Neighbor</h2>
             <p>
-                @Html.ActionLink("I Need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default", role = "button" })
+                @Html.ActionLink("I Need Help", "Create", new { id = ViewBag.TaskId }, new { @class = "btn btn-default help", role = "button" })
             </p>
         </div>
     </div>
@@ -31,7 +31,7 @@
                 @Html.RadioButton("sort", "Descending", true)<span>Newest First</span>
                 @Html.RadioButton("sort", "Ascending")<span>Oldest First</span>
                 @Html.TextBox("search");
-                <input type="submit" name="submit" value="Search" />
+                <input class="btn btn-default ask" type="submit" name="submit" value="Search" />
             }
         </div>
     </div>
@@ -62,7 +62,7 @@
                         <p>
                             @Html.DisplayFor(modelItem => item.TaskDescription)
                         </p>
-                        
+
                         <div>
                             <p>
                                 @if (ViewBag.userID == item.TaskCreatorID)
@@ -72,38 +72,33 @@
 
                                     if (item.IsDone.GetValueOrDefault(false))
                                     {
-                                        @Html.DisplayNameFor(model => model.IsDone)
-                                        <a href="@Url.Action("ToggleDone", new { id = item.TaskID })">
-
-                                            @if (item.IsDone.GetValueOrDefault(false))
-                                            {
-                                                <span class="glyphicon glyphicon-check"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="glyphicon glyphicon-unchecked"></span>
-                                            }
-
-                                        </a>
+                                        <span class="glyphicon glyphicon-check"></span>
                                     }
-                                    if (ViewBag.userID == item.TaskCreatorID)
+                                    else
                                     {
-                                        @Html.DisplayNameFor(model => model.IsAssigned)
-                                        <a href="@Url.Action("AssignedToggleDone", new { id = item.TaskID })">
-
-                                            @if (item.IsAssigned.GetValueOrDefault(false))
-                                            {
-                                                <span class="glyphicon glyphicon-check"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="glyphicon glyphicon-unchecked"></span>
-                                            }
-
-                                        </a>
+                                        <span class="glyphicon glyphicon-unchecked"></span>
                                     }
+                                    
+
+                                }
+
+                                @if (ViewBag.userID == item.TaskCreatorID)
+                                {
+                                    @Html.DisplayNameFor(model => model.IsAssigned)
+                                    <a href="@Url.Action("AssignedToggleDone", new { id = item.TaskID })" />
+
+                                    if (item.IsAssigned.GetValueOrDefault(false))
+                                    {
+                                        <span class="glyphicon glyphicon-check"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="glyphicon glyphicon-unchecked"></span>
+                                    }
+
                                 }
                             </p>
+
                             <p class="bottom">
                                 @Html.ActionLink("Details", "Details", new { id = item.TaskID }, new { @class = "btn btn-default ask", role = "button" })
                                 @Html.ActionLink("Offer Help", "Edit", new { id = item.TaskID }, new { @class = "btn btn-default help", role = "button" })
