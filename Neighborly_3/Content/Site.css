@@ -544,11 +544,12 @@ div.col-sm-6.col-md-4 {
     /*width: 100px;*/
 }
 
+
 /* Create Task View */
 .createThumbnail {
     justify-content: center;
+    text-align: center;
     padding-top: 0px;
-    padding-left: 40px;
     max-width: 525px;
     margin: auto;
     margin-top: 50px;
@@ -564,10 +565,6 @@ div.col-sm-6.col-md-4 {
     color: black;
     font-weight: bold;
     font-size: 42px;
-}
-
-.moveButton {
-    margin-left: 110px;
 }
 
 .textBox {

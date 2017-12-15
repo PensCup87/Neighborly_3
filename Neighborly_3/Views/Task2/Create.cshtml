@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     @*@Html.LabelFor(model => model.TaskTitle, htmlAttributes: new { @class = "control-label col-md-2" })*@
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         @Html.EditorFor(model => model.TaskTitle, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
                         @Html.ValidationMessageFor(model => model.TaskTitle, "", new { @class = "text-danger" })
                     </div>
@@ -27,7 +27,7 @@
 
                 <div class="form-group">
                     @*@Html.LabelFor(model => model.TaskDescription, htmlAttributes: new { @class = "control-label col-md-2" })*@
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         @Html.EditorFor(model => model.TaskDescription, new { htmlAttributes = new { @class = "form-control textBox", placeholder = "Description" } })
                         @Html.ValidationMessageFor(model => model.TaskDescription, "", new { @class = "text-danger" })
                     </div>
@@ -79,7 +79,7 @@
                     </div>*@
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-12">
                         <input type="submit" value="Create" class="btn btn-default moveButton ask" />
                     </div>
                 </div>
