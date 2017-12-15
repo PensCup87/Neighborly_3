@@ -257,10 +257,12 @@ button.navbar-toggle {
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
+    border: 1px solid white;
 }
 
     #myBtn:hover {
         color: #B8336A;
+        border: 1px solid #B8336A;
     }
 
 .glyphicon.glyphicon-menu-up {
@@ -396,7 +398,7 @@ textarea {
 /* FAQ Styling */
 .FAQTitle {
     font-family: 'Carter One', cursive;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
     margin: 50px;
 }
@@ -608,8 +610,8 @@ div.col-sm-6.col-md-4 {
     padding: 15px;
 }
 .centerBox>h2 {
-    font-family: 'Lalezar', cursive;
-    font-size: 42px;
+    font-family: 'Carter One', cursive;
+    font-size: 60px;
 }
 .form-control {
     justify-content: center !important;
