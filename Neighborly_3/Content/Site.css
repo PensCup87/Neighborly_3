@@ -396,18 +396,19 @@ textarea {
 /* FAQ Styling */
 .FAQTitle {
     font-family: 'Carter One', cursive;
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
+    margin: 50px;
 }
 
 .question {
     font-family: 'Lalezar', cursive;
-    font-size: 40px;
+    font-size: 27px;
     text-align: center;
 }
 
 .answer {
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -574,6 +575,7 @@ div.col-sm-6.col-md-4 {
 /* About Us */
 .AboutUsTitle {
     font-family: 'Carter One', cursive;
+    font-size: 50px;
 }
 
 .manageView {
@@ -590,6 +592,7 @@ div.col-sm-6.col-md-4 {
 .aboutUsPgraph {
     padding-right: 0px;
     margin-right: 0px;
+    font-size: 20px;
 }
 
 /*--------Login and Register view Styling-----------*/
